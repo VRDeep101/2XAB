@@ -1,0 +1,40 @@
+2XAB FOOTWEAR — REBUILD VALIDATION NOTES
+
+CHANGES
+- Reorganized the CSS controls into one QUICK EDIT PANEL near the top of style.css.
+- Replaced old uppercase/duplicate hero controls with a consistent, lowercase set of controls.
+- Added independent X/Y/size/width controls for both hero supporting-copy lines.
+- Connected navbar, logo, hero headline, tagline, Explore button, features art, brand strip, categories and featured carousel to the panel.
+- Added separate mobile/tablet control values to avoid mobile media queries silently replacing desktop sizing controls.
+- Removed several obsolete/unused compatibility declarations and corrected frame-name comments.
+- Updated QUICK-EDIT-GUIDE.txt and README.md.
+- Kept the existing scroll-linked frame-animation implementation; no separate 3D Preview section exists in index.html.
+
+CHECKS PERFORMED
+- JavaScript syntax: passed `node --check script.js`.
+- CSS brace balance: passed (opening and closing counts match).
+- HTML parser scan: no duplicate IDs detected.
+- Browser visual/interaction testing was not run in this environment.
+
+IMPORTANT: ASSETS MISSING FROM THE PROVIDED SOURCE ZIP
+Only assets/img/logo.png and assets/img/logo-white.png were present as image assets. The following referenced assets were not included:
+- assets/img/hero.jpg
+- assets/img/herotext.png
+- assets/icons/features.png
+- assets/img/brand1.png
+- assets/img/shopby.jpg
+- assets/img/sports.png, assets/img/casual.png, assets/img/sneakers.png
+- assets/img/sports_header.jpg, assets/img/casuals_header.jpg, assets/img/sneakers_header.jpg
+- assets/store/1.png through assets/store/6.png
+- assets/frames/frame_001.jpg through frame_088.jpg (and legacy assets/frame/ equivalents)
+
+The website code references these assets, but the original images/frames cannot be recreated faithfully from CSS or from the source ZIP because the files are absent. The frame-animation code and markup remain intact, but real frame playback requires the 88 image files.
+
+
+LATEST UPDATE NOTES
+- Applied supplied Quick Edit Panel values for navbar, hero taglines, Explore CTA, features artwork, and brand strip.
+- Added --featured-image-x/y/width/height controls and connected them to Featured Collection product images.
+- Replaced the physical-store section with a responsive Why 2XAB brand-identity section.
+- Updated Our Story and added horizontal social-gallery controls with drag support.
+- The ZIP's assets still do not include hero.jpg, herotext.png, features.png, brand1.png, category images, store product PNGs, or the 88 frame sequence; missing visuals may remain hidden or show the built-in fallback.
+- Browser-based visual testing was not performed in this environment.

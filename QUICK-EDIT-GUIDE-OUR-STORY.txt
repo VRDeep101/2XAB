@@ -1,0 +1,37 @@
+2XAB FOOTWEAR — OUR STORY QUICK EDIT GUIDE
+
+File: style.css
+Find: QUICK EDIT PANEL, then the OUR STORY controls.
+
+OUR STORY label controls:
+--story-eyebrow-x: positive = right, negative = left
+--story-eyebrow-y: positive = down, negative = up
+--story-eyebrow-size: font size in px
+--story-eyebrow-scale: scales the label (1 = normal)
+--story-eyebrow-width: available label width
+--story-eyebrow-font: font family (e.g. var(--font-body) or var(--font-head))
+--story-eyebrow-weight: font thickness (e.g. 400, 500, 700)
+--story-eyebrow-letter-spacing: letter spacing (e.g. .2em or 2px)
+--story-eyebrow-color: text color
+
+MADE TO MOVE headline controls:
+--story-headline-x: positive = right, negative = left
+--story-headline-y: positive = down, negative = up
+--story-headline-size: font size in px
+--story-headline-scale: scales the headline (1 = normal)
+--story-headline-width: maximum headline width
+--story-headline-font: font family
+--story-headline-weight: font thickness (e.g. 700, 900)
+--story-headline-style: italic or normal
+--story-headline-line-height: line spacing (e.g. .82)
+--story-headline-letter-spacing: character spacing (e.g. -2px)
+
+Example: move MADE TO MOVE 25px right and 10px up:
+--story-headline-x: 25px;
+--story-headline-y: -10px;
+
+Example: make it larger and non-italic:
+--story-headline-size: 100px;
+--story-headline-style: normal;
+
+After editing, save style.css and refresh the website. On mobile, the existing responsive rule caps the headline size to fit the screen.

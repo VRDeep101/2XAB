@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a0b">
+  <meta name="description" content="2XAB Footwear — Step one. Stand out. Premium footwear for everyday performance.">
+  <title>2XAB Footwear — Step One. Stand Out.</title>
+  <!-- Adds html.js so scroll-reveal styles only apply when JavaScript runs -->
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+  <!-- INTRO LOADER: first visit per session only (see initLoader in script.js) -->
+  <div class="loader" id="loader" role="status" aria-label="Loading 2XAB">
+    <img class="loader-logo" src="assets/img/logo-white.png" alt="2XAB Footwear">
+    <div class="loader-track"><i id="loaderBar"></i></div>
+    <p>LOADING YOUR EXPERIENCE <span id="loaderPercent">0%</span></p>
+  </div>
+
+  <!-- HEADER: fixed. Hides on scroll-down, reveals on scroll-up (script.js → onScrollHeader).
+       Mobile menu = #nav drawer; search = #searchPanel. -->
+  <header class="site-header" id="top">
+    <a class="brand-image" href="#top" aria-label="2XAB Footwear — back to top">
+      <img class="brand-logo" src="assets/img/logo.png" alt="2XAB Footwear" onerror="this.hidden=true; this.nextElementSibling.hidden=false"><span class="brand-wordmark" hidden>2XAB FOOTWEAR</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a class="nav-link" href="shop.html">Shop</a>
+      <a class="nav-link" href="#categories">Collections</a>
+      <a class="nav-link" href="#story">Our Story</a>
+      <a class="nav-link" href="#why-2xab">Why 2XAB</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" id="searchToggle" type="button" aria-label="Search products" aria-expanded="false" aria-controls="searchPanel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
+      </button>
+      <button class="icon-button" id="wishlistButton" type="button" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.3 5.3 0 0 0-7.5 0L12 6.1l-1.3-1.3a5.3 5.3 0 0 0-7.5 7.5l1.3 1.3L12 21l7.5-7.4 1.3-1.3a5.3 5.3 0 0 0 0-7.5Z"></path></svg>
+      </button>
+      <button class="icon-button cart-button" id="cartButton" type="button" aria-label="Cart, 0 items">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.2 12.1a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+        <b id="cartCount">0</b>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="search-panel" id="searchPanel" role="search">
+    <label class="sr-only" for="searchInput">Search products</label>
+    <input id="searchInput" type="search" placeholder="Search sneakers, sports, casual…" autocomplete="off">
+    <button id="searchClose" type="button" aria-label="Close search">×</button>
+    <p id="searchStatus" class="sr-only" aria-live="polite"></p>
+  </div>
+
+  <main>
+    <!-- SECTION 1 · HERO INTRO
+         Uses assets/img/hero.jpg (background) and assets/img/herotext.png (headline artwork).
+         Tune artwork and CTA position with the --hero-* variables in style.css. -->
+    <section class="hero-intro" id="hero-intro">
+      <img class="hero-intro-image" src="assets/img/hero.jpg" alt="2XAB footwear hero campaign">
+      <div class="hero-intro-shade" aria-hidden="true"></div>
+      <div class="hero-intro-copy">
+        <img class="hero-text-art" src="assets/img/herotext.png" alt="Premium footwear — Step one. Stand out.">
+        <p class="hero-tagline hero-tagline-one">BUILT FOR MOVEMENT. DESIGNED FOR YOU.</p>
+        <p class="hero-tagline hero-tagline-two">PREMIUM STYLE MEETS EVERYDAY COMFORT.</p>
+        <a class="hero-explore" href="#shoe-animation" aria-label="Explore collection">EXPLORE COLLECTION <span aria-hidden="true">↗</span></a>
+      </div>
+      <img class="hero-features-art" src="assets/icons/features.png" alt="Lightweight comfort, premium materials, built for everyday" onerror="this.hidden=true">
+      <a class="hero-intro-scroll" href="#shoe-animation">SCROLL TO EXPLORE ↓</a>
+    </section>
+
+    <!-- SECTION 2 · SINGLE INFINITE BRAND STRIP -->
+    <section class="brand-marquees" aria-label="Footwear brands">
+      <div class="logo-marquee marquee-left"><div class="logo-marquee-track">
+        <img class="brand-strip" src="assets/img/brand1.png" alt="Footwear brands">
+        <img class="brand-strip" src="assets/img/brand1.png" alt="" aria-hidden="true">
+      </div></div>
+    </section>
+
+    <!-- SECTION 3 · SHOE FRAME SEQUENCE
+         Scroll-linked canvas. Frames: assets/frames/frame_001.jpg … frame_088.jpg
+         (legacy folder assets/frame/ also accepted). Missing frames show the fallback panel. -->
+    <section class="hero-sequence" id="shoe-animation" aria-label="Sneaker scroll sequence">
+      <div class="hero-sticky">
+        <canvas class="hero-frame-canvas" id="heroCanvas" role="img" aria-label="Sneaker that rotates as you scroll"></canvas>
+        <div class="hero-fallback" id="heroFallback" aria-hidden="true"><img src="assets/img/logo-white.png" alt=""></div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 · SHOP BY CATEGORIES (cards link to the matching sub-pages) -->
+    <section class="categories" id="categories" aria-labelledby="categories-title">
+      <div class="categories-background" aria-hidden="true"></div>
+      <div class="section-intro">
+        <h2 id="categories-title">SHOP BY<br>CATEGORIES</h2>
+      </div>
+      <div class="category-grid">
+        <a class="category-card" href="sports.html" aria-label="Explore sports footwear">
+          <img src="assets/img/sports.png" alt="Sports footwear">
+          <div><h3>SPORTS</h3></div>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="category-card" href="casual.html" aria-label="Explore casual footwear">
+          <img src="assets/img/casual.png" alt="Casual footwear">
+          <div><h3>CASUAL</h3></div>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="category-card" href="sneakers.html" aria-label="Explore sneakers">
+          <img src="assets/img/sneakers.png" alt="Sneakers">
+          <div><h3>SNEAKERS</h3></div>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 5 · FEATURED COLLECTION (white background)
+         Six product cards are the source list. script.js turns them into a seamless loop.
+         Without JavaScript the cards show as a plain scrollable row. -->
+    <section class="featured on-light" id="featured" aria-labelledby="featured-title">
+      <div class="featured-heading">
+        <p class="eyebrow">THE LATEST DROP</p>
+        <h2 id="featured-title">FEATURED COLLECTION</h2>
+      </div>
+      <div class="featured-marquee" id="featuredMarquee" role="region" aria-roledescription="carousel" aria-label="Featured shoes">
+        <div class="featured-track" id="featuredTrack">
+          <article class="product-card" data-name="Shoe 1" data-category="Sneakers" data-desc="Everyday Essential">
+            <div class="product-image"><span class="product-tag">01 / NEW DROP</span><button class="wishlist" type="button" data-id="shoe-1" aria-pressed="false" aria-label="Add Shoe 1 to wishlist">♡</button><img src="assets/store/1.png" alt="2XAB Everyday Essential sneaker, Shoe 1"></div>
+            <div class="product-info"><div><h3>SHOE 1</h3><p>Everyday Essential</p></div><strong>₹ 2,999</strong></div>
+            <button class="product-cta add-cart" type="button" data-id="shoe-1"><span class="cta-label">Add to Cart</span><span class="arrow" aria-hidden="true">↗</span></button>
+          </article>
+          <article class="product-card" data-name="Shoe 2" data-category="Sports" data-desc="Performance Runner">
+            <div class="product-image"><span class="product-tag">02 / PERFORMANCE</span><button class="wishlist" type="button" data-id="shoe-2" aria-pressed="false" aria-label="Add Shoe 2 to wishlist">♡</button><img src="assets/store/2.png" alt="2XAB Performance Runner, Shoe 2"></div>
+            <div class="product-info"><div><h3>SHOE 2</h3><p>Performance Runner</p></div><strong>₹ 3,499</strong></div>
+            <button class="product-cta add-cart" type="button" data-id="shoe-2"><span class="cta-label">Add to Cart</span><span class="arrow" aria-hidden="true">↗</span></button>
+          </article>
+          <article class="product-card" data-name="Shoe 3" data-category="Casual" data-desc="Daily Street Style">
+            <div class="product-image"><span class="product-tag">03 / DAILY WEAR</span><button class="wishlist" type="button" data-id="shoe-3" aria-pressed="false" aria-label="Add Shoe 3 to wishlist">♡</button><img src="assets/store/3.png" alt="2XAB Daily Street Style shoe, Shoe 3"></div>
+            <div class="product-info"><div><h3>SHOE 3</h3><p>Daily Street Style</p></div><strong>₹ 2,999</strong></div>
+            <button class="product-cta add-cart" type="button" data-id="shoe-3"><span class="cta-label">Add to Cart</span><span class="arrow" aria-hidden="true">↗</span></button>
+          </article>
+          <article class="product-card" data-name="Shoe 4" data-category="Sneakers" data-desc="Classic Low Profile">
+            <div class="product-image"><span class="product-tag">04 / CLASSIC</span><button class="wishlist" type="button" data-id="shoe-4" aria-pressed="false" aria-label="Add Shoe 4 to wishlist">♡</button><img src="assets/store/4.png" alt="2XAB Classic Low Profile shoe, Shoe 4"></div>
+            <div class="product-info"><div><h3>SHOE 4</h3><p>Classic Low Profile</p></div><strong>₹ 3,299</strong></div>
+            <button class="product-cta add-cart" type="button" data-id="shoe-4"><span class="cta-label">Add to Cart</span><span class="arrow" aria-hidden="true">↗</span></button>
+          </article>
+          <article class="product-card" data-name="Shoe 5" data-category="Sports" data-desc="Active Motion">
+            <div class="product-image"><span class="product-tag">05 / ACTIVE</span><button class="wishlist" type="button" data-id="shoe-5" aria-pressed="false" aria-label="Add Shoe 5 to wishlist">♡</button><img src="assets/store/5.png" alt="2XAB Active Motion shoe, Shoe 5"></div>
+            <div class="product-info"><div><h3>SHOE 5</h3><p>Active Motion</p></div><strong>₹ 3,799</strong></div>
+            <button class="product-cta add-cart" type="button" data-id="shoe-5"><span class="cta-label">Add to Cart</span><span class="arrow" aria-hidden="true">↗</span></button>
+          </article>
+          <article class="product-card" data-name="Shoe 6" data-category="Casual" data-desc="Limited Edition">
+            <div class="product-image"><span class="product-tag">06 / LIMITED</span><button class="wishlist" type="button" data-id="shoe-6" aria-pressed="false" aria-label="Add Shoe 6 to wishlist">♡</button><img src="assets/store/6.png" alt="2XAB Limited Edition shoe, Shoe 6"></div>
+            <div class="product-info"><div><h3>SHOE 6</h3><p>Limited Edition</p></div><strong>₹ 3,199</strong></div>
+            <button class="product-cta add-cart" type="button" data-id="shoe-6"><span class="cta-label">Add to Cart</span><span class="arrow" aria-hidden="true">↗</span></button>
+          </article>
+        </div>
+      </div>
+      <p class="featured-empty" id="featuredEmpty" hidden>No products match your search. Try “sports”, “casual” or “sneakers”.</p>
+      <button class="featured-arrow featured-arrow-prev" id="featuredPrev" type="button" aria-label="Previous shoes">‹</button>
+      <button class="featured-arrow featured-arrow-next" id="featuredNext" type="button" aria-label="Next shoes">›</button>
+      <div class="featured-pagination" id="featuredPagination" aria-label="Choose featured slide"></div>
+    </section>
+
+    <!-- SECTION 7 · OUR STORY / MADE TO MOVE -->
+    <section class="story" id="story" aria-labelledby="story-title">
+      <div class="story-photo" aria-hidden="true"></div>
+      <div class="story-copy">
+        <p class="eyebrow">OUR STORY</p>
+        <h2 id="story-title">MADE<br>TO MOVE.</h2>
+        <p>From streets to new destinations, 2XAB is for those who never stop. A blend of style, comfort and performance — made for your next move.</p>
+        <a class="btn btn-light" href="#why-2xab">Know Our Journey <span class="arrow">↗</span></a>
+      </div>
+      <span class="story-index" aria-hidden="true">2XAB / 01</span>
+    </section>
+
+    <!-- SECTION 8 · WHY 2XAB — brand identity replaces the non-existent store section -->
+    <section class="brand-values" id="why-2xab" aria-labelledby="why-title">
+      <div class="brand-values-copy">
+        <p class="eyebrow">WHY 2XAB</p>
+        <h2 id="why-title">MORE THAN<br>JUST SNEAKERS</h2>
+        <p>At 2XAB, sneakers are more than footwear — they are part of your journey. We bring together considered style, everyday comfort and details made for your next move.</p>
+        <a class="btn btn-dark" href="#social">Explore Our Story <span class="arrow">↗</span></a>
+        <span class="brand-values-mark" aria-hidden="true">2XAB</span>
+      </div>
+      <div class="brand-values-image" role="img" aria-label="Premium sneaker editorial photography"></div>
+      <div class="brand-values-list">
+        <p class="eyebrow">THE 2XAB STANDARD</p>
+        <article class="value-item">
+          <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 20c4-1 7-5 9-10l5 5 7 3c2 1 3 3 3 5H5c-2 0-3-1-3-2s1-1 2-1Z"/><path d="M12 13l3 3m3-1 2 2M7 23h18"/></svg></span>
+          <div><h3>PREMIUM DESIGN</h3><p>Modern styles for everyday rotation.</p></div>
+        </article>
+        <article class="value-item">
+          <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 9h22M5 16h22M5 23h22"/><path d="M9 6v6m7 1v6m7 1v6"/></svg></span>
+          <div><h3>THOUGHTFUL DETAILS</h3><p>Materials and finishes chosen with care.</p></div>
+        </article>
+        <article class="value-item">
+          <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M18 2 7 17h8l-1 13 11-17h-8z"/></svg></span>
+          <div><h3>EVERYDAY COMFORT</h3><p>Made to keep up with your daily moves.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 9 · FOLLOW OUR JOURNEY / SOCIAL GALLERY -->
+    <section class="social on-light" id="social" aria-labelledby="social-title">
+      <div class="social-title">
+        <p class="eyebrow">FOLLOW ALONG</p>
+        <h2 id="social-title">FOLLOW<br>OUR JOURNEY</h2>
+        <p class="social-description">Style inspiration, new drops and footwear stories. Be part of the movement.</p>
+        <a class="social-instagram" href="https://www.instagram.com/2xab_stepup" target="_blank" rel="noopener noreferrer" aria-label="Follow 2XAB on Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" class="icon-fill"/></svg>
+          <span>Instagram <small>@2xab_stepup</small></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+
+        <div class="social-controls" aria-label="Gallery controls">
+          <button type="button" id="socialPrev" aria-label="Scroll gallery left">←</button>
+          <button type="button" id="socialNext" aria-label="Scroll gallery right">→</button>
+        </div>
+      </div>
+      <div class="social-gallery-viewport" id="socialGallery" tabindex="0" aria-label="2XAB footwear editorial gallery">
+        <div class="social-grid">
+          <figure><img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=85" alt="Sneaker editorial in a dramatic setting" loading="lazy"><figcaption>01 / IN MOTION</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=700&q=85" alt="Streetwear and everyday style" loading="lazy"><figcaption>02 / EVERYDAY STYLE</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=700&q=85" alt="Close-up footwear details" loading="lazy"><figcaption>03 / THE DETAILS</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=700&q=85" alt="Footwear on an urban street" loading="lazy"><figcaption>04 / CITY MOVES</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=85" alt="Contemporary streetwear inspiration" loading="lazy"><figcaption>05 / THE CULTURE</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (dark) -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand"><a href="#top" aria-label="2XAB Footwear — back to top"><img src="assets/img/logo-white.png" alt="2XAB Footwear"></a></div>
+      <nav aria-label="Footer"><h3>QUICK LINKS</h3><div class="footer-links"><a href="shop.html">Shop</a><a href="#categories">Collections</a><a href="#story">Our Story</a><a href="#why-2xab">Why 2XAB</a></div></nav>
+      <div class="newsletter">
+        <h3>JOIN THE MOVEMENT</h3>
+        <p>Get updates on new arrivals,<br>exclusive offers and more.</p>
+        <form id="newsletterForm" novalidate>
+          <label class="sr-only" for="email">Your email</label>
+          <input id="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
+        <small id="newsletterMessage" role="status"></small>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 2XAB Footwear. All rights reserved.</span>
+      <div><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

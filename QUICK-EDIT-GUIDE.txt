@@ -1,0 +1,77 @@
+2XAB FOOTWEAR — QUICK EDIT GUIDE
+
+EDIT THIS FILE:
+  style.css
+  Search for: QUICK EDIT PANEL
+  The panel is near the top of the stylesheet. Edit values there only.
+
+POSITION
+- X: positive = right; negative = left.
+- Y: positive = down; negative = up.
+- Positions are pixels (px).
+- Save style.css and hard-refresh the page (Ctrl+Shift+R).
+
+MAIN CONTROLS
+- --logo-x / --logo-y: header logo position.
+- --logo-width / --logo-height: logo size.
+- --nav-x / --nav-y: navigation content position.
+- --nav-width / --nav-height: navbar width and height.
+- --nav-opacity: navbar background opacity (0 transparent, 1 solid).
+- --nav-blur: glass blur in px.
+- --nav-link-gap / --nav-link-size: navigation link spacing and font size.
+- --headline-x / --headline-y / --headline-size: hero headline artwork.
+- --tagline-1-x / --tagline-1-y / --tagline-1-size / --tagline-1-width: first supporting line.
+- --tagline-2-x / --tagline-2-y / --tagline-2-size / --tagline-2-width: second supporting line.
+- --tagline-gap: space above the first supporting line.
+- --explore-x / --explore-y / --explore-width / --explore-height: Explore button.
+- --explore-text-size / --explore-gap: button text size and spacing above it.
+- --features-x / --features-y / --features-width / --features-right / --features-opacity: hero features artwork.
+- --brands-strip-height / --brands-logo-height / --brands-speed / --brands-opacity: brand strip height, image height, animation speed and opacity.
+- --categories-x / --categories-y / --categories-title-size / --categories-card-height / --categories-card-gap: categories section.
+- --featured-x / --featured-y / --featured-card-width / --featured-card-gap: featured carousel.
+
+SPEED
+- --brands-speed is a duration in seconds. Bigger = slower; smaller = faster.
+
+MOBILE
+The MOBILE OVERRIDES controls are in the same panel. These are intentionally separate from desktop values so mobile tuning doesn't silently change desktop.
+
+IMPORTANT ASSET LIMITATIONS
+The supplied ZIP has only the two logo PNGs. Hero imagery, headline artwork, features.png, brand1.png, category images, product images and the 88 animation frames are not included. The page references these paths, but their original visuals cannot be restored from this ZIP alone. The single brand1.png strip (when supplied) contains logos as one image, so individual baked-in logos cannot be independently resized or spaced via CSS.
+
+The separate 3D Preview section is not present in index.html. The scroll-linked frame-animation markup and JavaScript are preserved, but actual playback needs the missing frame files.
+
+Run locally with a static server (e.g. VS Code Live Server or `python3 -m http.server`) and open index.html.
+
+
+RESPONSIVE CSS NOTE
+A few clamp() declarations remain for non-panel responsive typography, page gutters, legal/sub-page sizing and arrow offsets. They are not used for the primary Quick Edit Panel controls listed above.
+
+
+FEATURED PRODUCT IMAGE CONTROLS
+In style.css > QUICK EDIT PANEL:
+- --featured-image-x: moves the product image left/right (positive = right).
+- --featured-image-y: moves the product image up/down (positive = down).
+- --featured-image-width: rendered image width (for example 110%).
+- --featured-image-height: rendered image height (for example 100%).
+These controls affect images inside the Featured Collection cards, not the card width itself.
+
+BRAND STORY REDESIGN
+The old physical-store section has been replaced with the Why 2XAB brand identity panel. The social gallery supports arrow controls and pointer dragging.
+
+
+OUR STORY — editable controls (style.css > QUICK EDIT PANEL)
+- Story eyebrow: --story-eyebrow-x / -y / -size / -scale
+- Headline: --story-headline-x / -y / -size / -scale / -width
+- Supporting paragraph: --story-copy-x / -y / -size / -scale / -width
+- Know Our Journey button: --story-button-x / -y / -width / -height / -scale / -text-size
+- Story background: --story-image-x / -y / -scale / -opacity; section height: --story-section-height
+- Background image path: assets/img/ourstory.jpg
+
+WHY 2XAB — editable controls
+- Left copy: --why-copy-x / -y / -scale / -width; headline size: --why-headline-size
+- Description size: --why-description-size; button: --why-button-x / -y / -width / -scale
+- Right image: --why-image-x / -y / -width / -height / -scale / -opacity
+- Black values panel: --why-values-x / -y / -padding; feature typography: --why-value-title-size / --why-value-copy-size
+- Image path: assets/img/why.jpg
+- The three values display side-by-side in a black panel, matching the provided reference. On mobile they remain in a compact three-column row.

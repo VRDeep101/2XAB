@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a0b">
+  <meta name="description" content="Casual footwear from 2XAB: easy everyday pairs with all-day comfort.">
+  <title>Casual Footwear — 2XAB</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand-image" href="index.html" aria-label="2XAB Footwear — home">
+      <img class="brand-logo" src="assets/img/logo.png" alt="2XAB Footwear">
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a class="nav-link" href="shop.html">Shop</a>
+      <a class="nav-link" href="index.html#categories">Collections</a>
+      <a class="nav-link" href="index.html#story">Our Story</a>
+      <a class="nav-link" href="index.html#visit">Visit Us</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" id="searchToggle" type="button" aria-label="Search products" aria-expanded="false" aria-controls="searchPanel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
+      </button>
+      <button class="icon-button" id="wishlistButton" type="button" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.3 5.3 0 0 0-7.5 0L12 6.1l-1.3-1.3a5.3 5.3 0 0 0-7.5 7.5l1.3 1.3L12 21l7.5-7.4 1.3-1.3a5.3 5.3 0 0 0 0-7.5Z"></path></svg>
+      </button>
+      <button class="icon-button cart-button" id="cartButton" type="button" aria-label="Cart, 0 items">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.2 12.1a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+        <b id="cartCount">0</b>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="search-panel" id="searchPanel" role="search">
+    <label class="sr-only" for="searchInput">Search products</label>
+    <input id="searchInput" type="search" placeholder="Search sneakers, sports, casual…" autocomplete="off">
+    <button id="searchClose" type="button" aria-label="Close search">×</button>
+    <p id="searchStatus" class="sr-only" aria-live="polite"></p>
+  </div>
+
+  <main>
+    <section class="page-hero page-hero-casuals" aria-label="Casual footwear campaign"><img class="page-hero-image" src="assets/img/casuals_header.jpg" alt="Casual footwear campaign"></section>
+    <section class="page-products" aria-label="Casual products">
+      <p class="section-note">Demo catalogue: prices, sizes and availability are placeholders. Checkout is not connected.</p>
+      <div class="product-grid">
+        <article class="product-card reveal" data-name="Shoe 3" data-category="Casual" data-desc="Daily Street Style">
+          <div class="product-image"><span class="product-tag">03 / DAILY WEAR</span><button class="wishlist" type="button" data-id="shoe-3" aria-pressed="false" aria-label="Add Shoe 3 to wishlist">♡</button><img src="assets/store/3.png" alt="2XAB Daily Street Style, Shoe 3" loading="lazy"></div>
+          <div class="product-info"><div><h3>SHOE 3</h3><p>Daily Street Style</p></div><strong>₹ 2,999</strong></div>
+          <button class="product-cta add-cart" type="button" data-id="shoe-3"><span class="cta-label">Add to Cart</span><span class="arrow" aria-hidden="true">↗</span></button>
+        </article>
+        <article class="product-card reveal" data-name="Shoe 6" data-category="Casual" data-desc="Limited Edition">
+          <div class="product-image"><span class="product-tag">06 / LIMITED</span><button class="wishlist" type="button" data-id="shoe-6" aria-pressed="false" aria-label="Add Shoe 6 to wishlist">♡</button><img src="assets/store/6.png" alt="2XAB Limited Edition, Shoe 6" loading="lazy"></div>
+          <div class="product-info"><div><h3>SHOE 6</h3><p>Limited Edition</p></div><strong>₹ 3,199</strong></div>
+          <button class="product-cta add-cart" type="button" data-id="shoe-6"><span class="cta-label">Add to Cart</span><span class="arrow" aria-hidden="true">↗</span></button>
+        </article>
+      </div>
+      <p class="grid-empty" id="gridEmpty" hidden>No products match your search. Try another term.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand"><a href="index.html" aria-label="2XAB Footwear — home"><img src="assets/img/logo-white.png" alt="2XAB Footwear"></a></div>
+      <nav aria-label="Footer"><h3>QUICK LINKS</h3><div class="footer-links"><a href="shop.html">Shop</a><a href="index.html#categories">Collections</a><a href="index.html#story">Our Story</a><a href="index.html#visit">Visit Us</a><a href="mailto:hello@2xabfootwear.in">Contact</a></div></nav>
+      <div><h3>CONTACT US</h3><p>☎ &nbsp;<a href="tel:+919876543210">+91 98765 43210</a></p><p>✉ &nbsp;<a href="mailto:hello@2xabfootwear.in">hello@2xabfootwear.in</a></p><p>⌖ &nbsp;123, MG Road, Bangalore</p><p>◷ &nbsp;Mon – Sat: 10AM – 8PM</p></div>
+      <div class="newsletter">
+        <h3>JOIN THE MOVEMENT</h3>
+        <p>Get updates on new arrivals,<br>exclusive offers and more.</p>
+        <form id="newsletterForm" novalidate>
+          <label class="sr-only" for="email">Your email</label>
+          <input id="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
+        <small id="newsletterMessage" role="status"></small>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 2XAB Footwear. All rights reserved.</span>
+      <div><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
